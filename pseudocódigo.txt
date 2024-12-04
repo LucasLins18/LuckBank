@@ -1,0 +1,50 @@
+PSEUDOCÓDIGO (Auxiliar entendimento do código final)
+Boa prática para faciliar na programação. (Aprendido no curso Data Science Academy )
+
+----------------------------------------------------------------------------------------------------
+Iniciar programa
+
+  Definir função "Conta" que:
+    -Inicializa os dados da conta (titular, senha, número da conta, saldo corrente e saldo poupança)
+    -Define a senha como privada (não pode ser alterada diretamente)
+    -Define a conta como não bloqueada
+    -Criar métodos para:
+      - Obter e alterar saldo corrente
+      - Obter e alterar saldo poupança
+      - Verificar a senha (com 3 tentativas, se errar, bloqueia a conta)
+      - Exibir o extrato (exibe o saldo da conta corrente e poupança, após verificar a senha)
+  
+  Definir classe "ContaCorrente" que herda da classe "Conta" e possui:
+    -Método "sacar": Verifica a senha, depois verifica se o saldo é suficiente e faz o saque
+    -Método "depositar": Verifica se o valor é positivo e realiza o depósito
+    -Método "aplicar": Verifica a senha e faz a aplicação de um valor na poupança
+
+  Definir classe "ContaPoupanca" que herda da classe "Conta" e possui:
+    -Método "resgatar": Verifica a senha e realiza o resgate da poupança para a conta corrente
+
+  Definir função principal "main" que:
+    - Exibe mensagem de boas-vindas
+    - Solicita ao usuário o nome do titular
+    - Solicita ao usuário a criação de uma senha de 4 dígitos (somente valores numéricos)
+    - Cria as contas corrente e poupança
+    - Realiza o primeiro depósito (mínimo de R$ 10,00)
+    - Exibe o número da conta
+    - Exibe um menu com opções:
+
+      1. Sacar
+      2. Depositar
+      3. Aplicar para poupança
+      4. Resgatar da poupança
+      5. Extrato
+      6. Sair
+
+    - Para cada opção escolhida:
+      - Verificar a senha antes de realizar a transação
+      - Exibir mensagens de erro se saldo for insuficiente ou valor inválido
+    - Se a conta estiver bloqueada, exibir mensagem de bloqueio e encerrar o atendimento
+    - Encerra o atendimento quando o usuário escolher a opção de sair ou quando a conta for bloqueada
+
+  Iniciar a execução do programa chamando a função "main"
+  
+Fim
+---------------------------------------------------------------------------------------------------------

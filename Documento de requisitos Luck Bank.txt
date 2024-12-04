@@ -1,0 +1,110 @@
+Documento de Requisitos - Sistema Bancário
+(Aprendido em Análise e Modelagem de Sistemas - Faciliar o entendimento do trabalho de POO e BD)
+
+-------------------------------------------------------
+DOCUMENTO DE REQUISITOS SIMPLIFICADO DO SISTEMA BANCÁRIO LUCK BANK
+Versão 1.0
+Desenvolvido por Lucas Barbosa Lins
+
+Objetivo:
+Desenvolver um sistema bancário simples que permita a criação e manipulação de contas correntes e contas poupança, 
+com operações como saque, depósito, aplicação, resgate e extrato, utilizando uma senha de 4 dígitos para garantir a segurança nas transações.
+
+1. Requisitos Funcionais (RF)
+1.1 Cadastro de Conta
+O sistema deve permitir que o usuário cadastre uma nova conta fornecendo:
+Nome completo do titular
+Uma senha de 4 dígitos (numérica)
+O número da conta será gerado automaticamente, de forma aleatória, com 3 dígitos.
+A conta só será criada após o primeiro depósito de no mínimo R$ 10,00.
+
+1.2 Operações Bancárias
+O sistema deve permitir as seguintes operações, com as devidas verificações de senha:
+-Sacar: O usuário pode retirar um valor da conta corrente, desde que tenha saldo suficiente.
+-Depositar: O usuário pode depositar um valor na conta corrente.
+-Aplicar para Poupança: O usuário pode transferir um valor da conta corrente para a conta poupança.
+-Resgatar da Poupança: O usuário pode transferir um valor da conta poupança para a conta corrente.
+-Extrato: O sistema exibe o extrato da conta corrente e poupança do titular.
+
+1.3 Verificação de Senha
+O sistema deve solicitar uma senha de 4 dígitos para realizar qualquer transação.
+O sistema permitirá até 3 tentativas de senha incorretas. Após 3 tentativas falhas, a conta será bloqueada e o atendimento será encerrado. O usuário 
+deve ser informado para se dirigir à agência para desbloqueio.
+
+1.4 Mensagens de Confirmação
+O sistema deve fornecer mensagens de confirmação para cada operação realizada:
+-"Saque realizado com sucesso"
+-"Depósito realizado com sucesso"
+-"Aplicação realizada com sucesso"
+-"Resgate realizado com sucesso"
+-"Extrato exibido com sucesso"
+
+1.5 Bloqueio de Conta
+Caso o número máximo de tentativas de senha erradas seja alcançado, a conta será bloqueada, e o usuário deverá ser informado para se dirigir à agência para desbloqueio.
+
+1.6 Encerramento do Atendimento
+O sistema deve permitir que o usuário encerre o atendimento a qualquer momento, através de uma opção no menu.
+
+2. Requisitos Não Funcionais (RNF)
+
+2.1 Segurança
+A senha do usuário deve ser tratada de forma segura (não deve ser possível alterá-la diretamente, sendo necessário usar métodos de alteração).
+As senhas serão compostas por exatamente 4 dígitos numéricos.
+
+2.2 Usabilidade
+O sistema deve ser simples e intuitivo, com menus claros e opções fáceis de entender.
+Mensagens de erro e sucesso devem ser exibidas de forma clara, para que o usuário saiba o que está acontecendo.
+
+2.3 Desempenho
+O sistema deve ser rápido na execução das operações de depósito, saque, transferência e exibição de extrato, sem atrasos perceptíveis para o usuário.
+
+3. Requisitos de Interface
+3.1 Menu Principal
+O sistema deve exibir um menu com as seguintes opções:
+-Sacar
+-Depositar
+-Aplicar para Poupança
+-Resgatar da Poupança
+-Extrato
+-Sair
+
+3.2 Mensagens de Erro
+O sistema deve exibir mensagens de erro claras caso o usuário tente realizar uma operação sem saldo suficiente, ou se inserir valores inválidos.
+
+4. Requisitos Técnicos
+4.1 Tecnologias Utilizadas
+Linguagem de Programação: Python 
+IDE: Pode ser utilizado qualquer editor de código, como PyCharm, VS Code, ou o ambiente de desenvolvimento preferido pelo usuário.
+
+4.2 Armazenamento
+O sistema não requer banco de dados em sua etapa inicial. Todos os dados serão mantidos em memória enquanto o programa estiver em execução. Futuramente (Na Disciplina 
+Banco de Dados), será implementado a parte do banco de dados.
+
+5. Fluxo de Operações
+
+-Cadastro de Conta:
+
+Usuário fornece nome e senha.
+Número da conta é gerado automaticamente.
+O primeiro depósito (mínimo R$ 10,00) é realizado.
+Menu de Operações:
+
+O sistema exibe o menu de operações para o usuário escolher.
+O usuário escolhe uma operação, a senha é solicitada e, se correta, a operação é realizada.
+Bloqueio de Conta:
+
+- Após 3 tentativas de senha incorretas, a conta será bloqueada e o sistema encerrará o atendimento.
+
+7. Conclusão
+Este sistema bancário simples atende aos requisitos de um sistema básico de controle de contas correntes e poupanças, com segurança para as transações através de uma senha, 
+controle de bloqueio de conta após múltiplas tentativas erradas, e a funcionalidade básica de depósitos, saques, aplicações e extratos. (O projeto será mais implementado 
+Futuramente com a continuação do trabalho para a disciplina Banco de Dados)
+
+
+-------------------------------------------------------
+Espaço para anotações para implementações futuras e ideias de melhorias.
+- Implementar a mensagem de erros de senha (colocar a quantidade de vezes que a senha foi inserida errada)
+-
+-
+-
+-
